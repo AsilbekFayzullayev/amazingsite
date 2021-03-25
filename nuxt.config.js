@@ -1,5 +1,7 @@
 import colors from 'vuetify/es5/util/colors'
-
+import en from "./langservices/en.json"
+import uz from "./langservices/uz.json"
+import ru from "./langservices/ru.json"
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -35,15 +37,32 @@ export default {
     '@nuxtjs/vuetify',
   ],
 
-  // Modules: https://go.nuxtjs.dev/config-modules
+
   modules: [
+    [
+      'nuxt-i18n',
+      {
+        locales: ['en', 'uz','ru'],
+        defaultLocale: 'en',
+        vueI18n: {
+          fallbackLocale: 'en',
+          messages: {
+            en,
+            uz,
+            ru
+          }
+        }
+      }
+    ]
   ],
+
+
+  // Modules: https://go.nuxtjs.dev/config-modules
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     theme: {
-      dark: true,
       themes: {
         dark: {
           primary: colors.blue.darken2,

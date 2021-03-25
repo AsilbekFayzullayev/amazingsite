@@ -13,10 +13,10 @@
       </div>
 
       <div class="ml-5 mt-2" style="width: 200px; color: darkslategray">
-        <p class="my-4">Internetda o'z o'rningizni egallashga shoshiling</p>
+        <p class="my-4">{{ $t('net') }}</p>
       </div>
 
-      <div class="mr-5" style="color: darkslategray">
+      <div class="mx-5" style="color: darkslategray">
         <p style="margin-bottom: 0">
           <phone-icons fill-color="darkslategrey" class="mr-2"/>
           +99891 257 17 70
@@ -27,20 +27,20 @@
         </p>
       </div>
       <v-btn style="color: darkslategray;border-radius: 15px" class="aksiyaBtn mr-5" outlined>
-        Chegirma Va Aksiyalar
+        {{ $t('discount') }}
       </v-btn>
       <div style="align-items: center;display: flex; cursor: pointer">
         <password-icons fill-color="darkslategrey"/>
         <div class="ml-4 mt-4">
-          <span style="color: darkslategray">Shaxsiy Kabinet</span>
-          <p>Boshqaruv paneli </p>
+          <span style="color: darkslategray">{{ $t('cabinet') }}</span>
+          <p>{{ $t('panel') }} </p>
         </div>
       </div>
       <div class="mx-5 mt-5">
         <v-select
           :items="items"
           style="width: 90px;color: darkslategray!important;border-radius: 20px"
-          value="Uz"
+          v-model="lang"
           outlined
           dense
         ></v-select>
@@ -73,14 +73,10 @@
     <!--        </v-list-item>-->
     <!--      </v-list>-->
     <!--    </v-navigation-drawer>-->
-    <v-app-bar
-      :clipped-left="clipped"
-      style="background-color: aliceblue;box-shadow: none;border-top: 1px solid lightgray"
-      fixed
-      dark
-      app
-    >
-    </v-app-bar>
+
+
+
+<navbar />
     <v-main>
       <v-container>
         <nuxt/>
@@ -98,9 +94,11 @@
 
 <script>
 import img from "@/static/Screenshot (22).png"
+
 import PhoneIcons from "vue-material-design-icons/Phone.vue"
 import TelegramIcons from "vue-material-design-icons/Telegram.vue"
 import PasswordIcons from "vue-material-design-icons/Lock.vue"
+
 
 export default {
   data() {
@@ -109,8 +107,10 @@ export default {
       drawer: false,
       fixed: false,
       img: img,
+      lang: this.$i18n.locale,
+
       items: [
-        'Uz', 'Ru', 'Eng'
+        'en', 'uz', 'ru'
       ]
     }
   },
@@ -118,6 +118,12 @@ export default {
     PhoneIcons,
     TelegramIcons,
     PasswordIcons
+  },
+  watch: {
+    lang(lang) {
+      this.$router.push(this.switchLocalePath(`${lang}`)
+      )
+    }
   }
 }
 </script>
@@ -140,4 +146,5 @@ export default {
   color: white !important;
   border: none;
 }
+
 </style>
