@@ -43,9 +43,7 @@ export default {
       'nuxt-i18n',
       {
         locales: ['en', 'uz','ru'],
-        defaultLocale: 'uz',
         vueI18n: {
-          fallbackLocale: 'uz',
           messages: {
             en,
             uz,

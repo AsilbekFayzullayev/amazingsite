@@ -1,13 +1,13 @@
 <template>
   <v-app-bar
     :clipped-left="clipped"
-    style="background-color: aliceblue;color: darkslategray; box-shadow: none;border-top: 1px solid lightgray"
+    style="background-color: aliceblue;color: darkslategray; box-shadow: 0 4px 5px darkslategray;border-top: 1px solid lightgray"
     fixed
     dark
     app
   >
     <v-spacer></v-spacer>
-    <v-btn icon to="/">
+    <v-btn icon :to="`/${$i18n.locale}`">
       <v-icon class="icon" large style="">{{ icons.mdiHomeFloorA }}
       </v-icon>
     </v-btn>
@@ -16,14 +16,14 @@
     <hosting_menu/>
     <ssl_menu/>
 
-    <v-btn class="btn ml-5" to="/mail">
+    <v-btn class="btn ml-5" :to="`/${$i18n.locale}/mail`">
       {{ $t('mail') }}
     </v-btn>
     <website_menu />
-    <v-btn class="btn ml-5" to="/sms">
+    <v-btn class="btn ml-5" :to="`/${$i18n.locale}/sms`">
       {{ $t('sms') }}
     </v-btn>
-    <v-btn class="btn ml-5" to="/reseller">
+    <v-btn class="btn ml-5" :to="`/${$i18n.locale}/reseller`">
       {{ $t('partner') }}
     </v-btn>
 
@@ -34,10 +34,10 @@
 
 <script>
 import {mdiHomeFloorA} from "@mdi/js";
-import Domen_menu from "@/header-menus/domen_menu";
-import Hosting_menu from "@/header-menus/hosting_menu";
-import Ssl_menu from "@/header-menus/ssl_menu";
-import Website_menu from "@/header-menus/website_menu";
+import Domen_menu from "@/navbar-menus/domen_menu";
+import Hosting_menu from "@/navbar-menus/hosting_menu";
+import Ssl_menu from "@/navbar-menus/ssl_menu";
+import Website_menu from "@/navbar-menus/website_menu";
 
 export default {
   name: "Navbar",

@@ -7,33 +7,33 @@
         v-on="on"
         dense
       >
-        {{ $t('hosting') }}
+        {{ $t('domain') }}
         <v-icon right class="iconRight">{{ icons.mdiChevronRight }}</v-icon>
       </v-btn>
     </template>
     <v-list style="padding: 10px">
-      <nuxt-link to="/sale"  class="nuxt_link">
+      <nuxt-link :to="`/${$i18n.locale}/sale`"   class="nuxt_link">
         <v-list-item class="dropdownList">
           <v-icon class="icon" large>{{ icons.mdiSale }}</v-icon>
-          <span class="iconText">{{ $t('hosting_menu.textdisco') }}</span>
+          <span class="iconText">{{ $t('domain_menus.textdisco') }}</span>
         </v-list-item>
       </nuxt-link>
-      <nuxt-link to="/hosting" class="nuxt_link">
+      <nuxt-link :to="`/${$i18n.locale}/domain`"  class="nuxt_link">
         <v-list-item class="dropdownList">
-          <v-icon class="icon" large>{{ icons.mdiPageNextOutline }}</v-icon>
-          <span class="iconText">{{ $t('hosting_menu.sharehosting') }}</span>
+          <v-icon class="icon" large>{{ icons.mdiWan }}</v-icon>
+          <span class="iconText">{{ $t('domain_menus.searchdomain') }}</span>
         </v-list-item>
       </nuxt-link>
-      <nuxt-link to="/vps" class="nuxt_link">
+      <nuxt-link :to="`/${$i18n.locale}/transfer_domain`"  class="nuxt_link">
         <v-list-item class="dropdownList">
-          <v-icon class="icon" large>{{ icons.mdiServerNetwork }}</v-icon>
-          <span class="iconText">{{ $t('hosting_menu.vps') }}</span>
+          <v-icon class="icon" large>{{ icons.mdiCached }}</v-icon>
+          <span class="iconText">{{ $t('domain_menus.changereg') }}</span>
         </v-list-item>
       </nuxt-link>
-      <nuxt-link to="/colocation" class="nuxt_link">
+      <nuxt-link :to="`/${$i18n.locale}/change_ownership`"  class="nuxt_link">
         <v-list-item class="dropdownList">
-          <v-icon class="icon" large>{{ icons.mdiServer }}</v-icon>
-          <span class="iconText">{{ $t('hosting_menu.server') }}</span>
+          <v-icon class="icon" large>{{ icons.mdiAccountSwitch }}</v-icon>
+          <span class="iconText">{{ $t('domain_menus.changeowner') }}</span>
         </v-list-item>
       </nuxt-link>
     </v-list>
@@ -42,22 +42,22 @@
 
 <script>
 import {
+  mdiSale,
   mdiChevronRight,
-  mdiPageNextOutline,
-  mdiServerNetwork,
-  mdiServer,
-  mdiSale
+  mdiWan,
+  mdiCached,
+  mdiAccountSwitch
 } from "@mdi/js";
 
 export default {
-  name: "hosting_menu",
+  name: "domen_menu",
   data: () => ({
     icons: {
       mdiChevronRight,
-      mdiPageNextOutline,
-      mdiServerNetwork,
-      mdiServer,
-      mdiSale
+      mdiSale,
+      mdiWan,
+      mdiCached,
+      mdiAccountSwitch
     },
   })
 }
@@ -70,7 +70,6 @@ export default {
   color: darkslategray !important;
   box-shadow: none !important;
 }
-
 .menuBtn:hover {
   background-color: darkslategray !important;
   color: aliceblue !important;
@@ -108,5 +107,5 @@ export default {
 .nuxt_link{
   text-decoration: none;
 }
-</style>
 
+</style>

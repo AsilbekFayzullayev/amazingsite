@@ -26,7 +26,7 @@
         @zuccotech
       </p>
     </div>
-    <v-btn to="/sale" style="color: darkslategray;border-radius: 15px" class="aksiyaBtn mr-5" outlined>
+    <v-btn :to="`/${$i18n.locale}/sale`" style="color: darkslategray;border-radius: 15px" class="aksiyaBtn mr-5" outlined>
       {{ $t('discount') }}
     </v-btn>
     <div style="align-items: center;display: flex; cursor: pointer">

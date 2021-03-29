@@ -31,6 +31,12 @@
   "website_menu": {
     "express": "Express sites",
     "exclusive": "Exclusive sites"
+  },
+  "index_page": {
+    "start_busines": "Business starts with a domain",
+    "register_domains": ".UZ domains we registered are exceeding 1897",
+    "search_requires": "Please enter a domain",
+    "search_label": "Enter domain .uz",
+    "price_year": ".UZ 114.000 UZS / a year (*for new clients)"
   }
-
 }

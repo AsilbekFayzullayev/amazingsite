@@ -7,42 +7,45 @@
         v-on="on"
         dense
       >
-        {{ $t('website') }}
+        {{ $t('ssl') }}
         <v-icon right class="iconRight">{{ icons.mdiChevronRight }}</v-icon>
       </v-btn>
     </template>
     <v-list style="padding: 10px">
-      <nuxt-link to="/express_sites" class="nuxt_link">
+      <nuxt-link :to="`/${$i18n.locale}/sale`"  class="nuxt_link">
         <v-list-item class="dropdownList">
-          <v-icon class="icon" large>{{ icons.mdiApplication }}</v-icon>
-          <span class="iconText">{{ $t('website_menu.express') }}</span>
+          <v-icon class="icon" large>{{ icons.mdiSale }}</v-icon>
+          <span class="iconText">{{ $t('ssl_menu.textdisco') }}</span>
         </v-list-item>
       </nuxt-link>
-      <nuxt-link to="/exclusive_sites" class="nuxt_link">
+      <nuxt-link :to="`/${$i18n.locale}/ssl_certificate`"  class="nuxt_link">
         <v-list-item class="dropdownList">
-          <v-icon class="icon" large>{{ icons.mdiViewCompactOutline  }}</v-icon>
-          <span class="iconText">{{ $t('website_menu.exclusive') }}</span>
+          <v-icon class="icon" large>{{ icons.mdiDomain }}</v-icon>
+          <span class="iconText">{{ $t('ssl_menu.domen') }}</span>
         </v-list-item>
       </nuxt-link>
+      <v-list-item class="dropdownList">
+        <v-icon class="icon" large>{{ icons.mdiDomain }}</v-icon>
+        <span class="iconText">{{ $t('ssl_menu.subdomen') }}</span>
+      </v-list-item>
+      <v-list-item class="dropdownList">
+        <v-icon class="icon" large>{{ icons.mdiDomain }}</v-icon>
+        <span class="iconText">{{ $t('ssl_menu.namecompany') }}</span>
+      </v-list-item>
     </v-list>
   </v-menu>
-
 </template>
 
 <script>
-import {
-  mdiChevronRight,
-  mdiApplication,
-  mdiViewCompactOutline
-} from "@mdi/js";
+import {mdiChevronRight, mdiSale, mdiDomain} from "@mdi/js";
 
 export default {
-  name: "website_menu",
+  name: "ssl_menu",
   data: () => ({
     icons: {
       mdiChevronRight,
-      mdiApplication,
-      mdiViewCompactOutline
+      mdiSale,
+      mdiDomain
     },
   })
 }
@@ -93,3 +96,4 @@ export default {
   text-decoration: none;
 }
 </style>
+

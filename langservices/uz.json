@@ -31,5 +31,12 @@
   "website_menu": {
     "express": "Express saytlar",
     "exclusive": "Eksklyuziv saytlar"
+  },
+  "index_page": {
+    "start_busines": "Biznes domendan boshlanadi",
+    "register_domains": ".UZ zonasida ro'yxatga olingan domenlar soni 1897 dan oshdi",
+    "search_requires": "Iltimos domenni kiriting",
+    "search_label": ".uz domenini kiriting",
+    "price_year": ".UZ 114.000 UZS / a year (* yangi mijozlarga)"
   }
 }
