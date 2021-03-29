@@ -12,14 +12,18 @@
       </v-btn>
     </template>
     <v-list style="padding: 10px">
-      <v-list-item class="dropdownList">
-        <v-icon class="icon" large>{{ icons.mdiSale }}</v-icon>
-        <span class="iconText">{{ $t('ssl_menu.textdisco') }}</span>
-      </v-list-item>
-      <v-list-item class="dropdownList">
-        <v-icon class="icon" large>{{ icons.mdiDomain }}</v-icon>
-        <span class="iconText">{{ $t('ssl_menu.domen') }}</span>
-      </v-list-item>
+      <nuxt-link to="/sale" class="nuxt_link">
+        <v-list-item class="dropdownList">
+          <v-icon class="icon" large>{{ icons.mdiSale }}</v-icon>
+          <span class="iconText">{{ $t('ssl_menu.textdisco') }}</span>
+        </v-list-item>
+      </nuxt-link>
+      <nuxt-link to="/ssl_certificate" class="nuxt_link">
+        <v-list-item class="dropdownList">
+          <v-icon class="icon" large>{{ icons.mdiDomain }}</v-icon>
+          <span class="iconText">{{ $t('ssl_menu.domen') }}</span>
+        </v-list-item>
+      </nuxt-link>
       <v-list-item class="dropdownList">
         <v-icon class="icon" large>{{ icons.mdiDomain }}</v-icon>
         <span class="iconText">{{ $t('ssl_menu.subdomen') }}</span>
@@ -87,6 +91,9 @@ export default {
 
 .dropdownList:hover .icon {
   color: aliceblue;
+}
+.nuxt_link{
+  text-decoration: none;
 }
 </style>
 

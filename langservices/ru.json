@@ -27,7 +27,11 @@
   "mail": "Почта",
   "sms": "Смс",
   "partner": "Партнер",
-  "website": "Сайты"
+  "website": "Сайты",
+  "website_menu": {
+    "express": "Экспресс сайты",
+    "exclusive": "Эксклюзивные сайты"
+  }
 
 
 

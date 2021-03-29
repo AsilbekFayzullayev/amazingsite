@@ -12,22 +12,30 @@
       </v-btn>
     </template>
     <v-list style="padding: 10px">
-      <v-list-item class="dropdownList">
-        <v-icon class="icon" large>{{ icons.mdiSale }}</v-icon>
-        <span class="iconText">{{ $t('hosting_menu.textdisco') }}</span>
-      </v-list-item>
-      <v-list-item class="dropdownList">
-        <v-icon class="icon" large>{{ icons.mdiPageNextOutline }}</v-icon>
-        <span class="iconText">{{ $t('hosting_menu.sharehosting') }}</span>
-      </v-list-item>
-      <v-list-item class="dropdownList">
-        <v-icon class="icon" large>{{ icons.mdiServerNetwork }}</v-icon>
-        <span class="iconText">{{ $t('hosting_menu.vps') }}</span>
-      </v-list-item>
-      <v-list-item class="dropdownList">
-        <v-icon class="icon" large>{{ icons.mdiServer }}</v-icon>
-        <span class="iconText">{{ $t('hosting_menu.server') }}</span>
-      </v-list-item>
+      <nuxt-link to="/sale"  class="nuxt_link">
+        <v-list-item class="dropdownList">
+          <v-icon class="icon" large>{{ icons.mdiSale }}</v-icon>
+          <span class="iconText">{{ $t('hosting_menu.textdisco') }}</span>
+        </v-list-item>
+      </nuxt-link>
+      <nuxt-link to="/hosting" class="nuxt_link">
+        <v-list-item class="dropdownList">
+          <v-icon class="icon" large>{{ icons.mdiPageNextOutline }}</v-icon>
+          <span class="iconText">{{ $t('hosting_menu.sharehosting') }}</span>
+        </v-list-item>
+      </nuxt-link>
+      <nuxt-link to="/vps" class="nuxt_link">
+        <v-list-item class="dropdownList">
+          <v-icon class="icon" large>{{ icons.mdiServerNetwork }}</v-icon>
+          <span class="iconText">{{ $t('hosting_menu.vps') }}</span>
+        </v-list-item>
+      </nuxt-link>
+      <nuxt-link to="/colocation" class="nuxt_link">
+        <v-list-item class="dropdownList">
+          <v-icon class="icon" large>{{ icons.mdiServer }}</v-icon>
+          <span class="iconText">{{ $t('hosting_menu.server') }}</span>
+        </v-list-item>
+      </nuxt-link>
     </v-list>
   </v-menu>
 </template>
@@ -96,6 +104,9 @@ export default {
 
 .dropdownList:hover .icon {
   color: aliceblue;
+}
+.nuxt_link{
+  text-decoration: none;
 }
 </style>
 

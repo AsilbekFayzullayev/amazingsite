@@ -16,14 +16,14 @@
     <hosting_menu/>
     <ssl_menu/>
 
-    <v-btn class="btn ml-5">
+    <v-btn class="btn ml-5" to="/mail">
       {{ $t('mail') }}
     </v-btn>
     <website_menu />
-    <v-btn class="btn ml-5">
+    <v-btn class="btn ml-5" to="/sms">
       {{ $t('sms') }}
     </v-btn>
-    <v-btn class="btn ml-5">
+    <v-btn class="btn ml-5" to="/reseller">
       {{ $t('partner') }}
     </v-btn>
 

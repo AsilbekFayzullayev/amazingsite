@@ -27,5 +27,9 @@
   "mail": "Pochta",
   "sms": "Sms",
   "partner": "Hamkorlik",
-  "website": "Saytlar"
+  "website": "Saytlar",
+  "website_menu": {
+    "express": "Express saytlar",
+    "exclusive": "Eksklyuziv saytlar"
+  }
 }

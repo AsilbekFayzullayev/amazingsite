@@ -12,22 +12,30 @@
       </v-btn>
     </template>
     <v-list style="padding: 10px">
-      <v-list-item class="dropdownList">
-        <v-icon class="icon" large>{{ icons.mdiSale }}</v-icon>
-        <span class="iconText">{{ $t('domain_menus.textdisco') }}</span>
-      </v-list-item>
-      <v-list-item class="dropdownList">
-        <v-icon class="icon" large>{{ icons.mdiWan }}</v-icon>
-        <span class="iconText">{{ $t('domain_menus.searchdomain') }}</span>
-      </v-list-item>
-      <v-list-item class="dropdownList">
-        <v-icon class="icon" large>{{ icons.mdiCached }}</v-icon>
-        <span class="iconText">{{ $t('domain_menus.changereg') }}</span>
-      </v-list-item>
-      <v-list-item class="dropdownList">
-        <v-icon class="icon" large>{{ icons.mdiAccountSwitch }}</v-icon>
-        <span class="iconText">{{ $t('domain_menus.changeowner') }}</span>
-      </v-list-item>
+      <nuxt-link to="/sale"  class="nuxt_link">
+        <v-list-item class="dropdownList">
+          <v-icon class="icon" large>{{ icons.mdiSale }}</v-icon>
+          <span class="iconText">{{ $t('domain_menus.textdisco') }}</span>
+        </v-list-item>
+      </nuxt-link>
+      <nuxt-link to="/domain" class="nuxt_link">
+        <v-list-item class="dropdownList">
+          <v-icon class="icon" large>{{ icons.mdiWan }}</v-icon>
+          <span class="iconText">{{ $t('domain_menus.searchdomain') }}</span>
+        </v-list-item>
+      </nuxt-link>
+      <nuxt-link to="/transfer_domain" class="nuxt_link">
+        <v-list-item class="dropdownList">
+          <v-icon class="icon" large>{{ icons.mdiCached }}</v-icon>
+          <span class="iconText">{{ $t('domain_menus.changereg') }}</span>
+        </v-list-item>
+      </nuxt-link>
+      <nuxt-link to="/change_ownership" class="nuxt_link">
+        <v-list-item class="dropdownList">
+          <v-icon class="icon" large>{{ icons.mdiAccountSwitch }}</v-icon>
+          <span class="iconText">{{ $t('domain_menus.changeowner') }}</span>
+        </v-list-item>
+      </nuxt-link>
     </v-list>
   </v-menu>
 </template>
@@ -96,4 +104,8 @@ export default {
 .dropdownList:hover .icon {
   color: aliceblue;
 }
+.nuxt_link{
+  text-decoration: none;
+}
+
 </style>

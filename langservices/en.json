@@ -27,6 +27,10 @@
   "mail": "Mail",
   "sms": "Sms",
   "partner": "Cooperation",
-  "website": "Website"
+  "website": "Website",
+  "website_menu": {
+    "express": "Express sites",
+    "exclusive": "Exclusive sites"
+  }
 
 }

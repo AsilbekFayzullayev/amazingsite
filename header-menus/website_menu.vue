@@ -12,14 +12,18 @@
       </v-btn>
     </template>
     <v-list style="padding: 10px">
-      <v-list-item class="dropdownList">
-        <v-icon class="icon" large>{{ icons.mdiApplication }}</v-icon>
-        <span class="iconText">{{ $t('domain_menus.textdisco') }}</span>
-      </v-list-item>
-      <v-list-item class="dropdownList">
-        <v-icon class="icon" large>{{ icons.mdiWan }}</v-icon>
-        <span class="iconText">{{ $t('domain_menus.searchdomain') }}</span>
-      </v-list-item>
+      <nuxt-link to="/express_sites" class="nuxt_link">
+        <v-list-item class="dropdownList">
+          <v-icon class="icon" large>{{ icons.mdiApplication }}</v-icon>
+          <span class="iconText">{{ $t('website_menu.express') }}</span>
+        </v-list-item>
+      </nuxt-link>
+      <nuxt-link to="/exclusive_sites" class="nuxt_link">
+        <v-list-item class="dropdownList">
+          <v-icon class="icon" large>{{ icons.mdiViewCompactOutline  }}</v-icon>
+          <span class="iconText">{{ $t('website_menu.exclusive') }}</span>
+        </v-list-item>
+      </nuxt-link>
     </v-list>
   </v-menu>
 
@@ -28,7 +32,8 @@
 <script>
 import {
   mdiChevronRight,
-  mdiApplication
+  mdiApplication,
+  mdiViewCompactOutline
 } from "@mdi/js";
 
 export default {
@@ -36,7 +41,8 @@ export default {
   data: () => ({
     icons: {
       mdiChevronRight,
-      mdiApplication
+      mdiApplication,
+      mdiViewCompactOutline
     },
   })
 }
@@ -82,5 +88,8 @@ export default {
 
 .dropdownList:hover .icon {
   color: aliceblue;
+}
+.nuxt_link{
+  text-decoration: none;
 }
 </style>
