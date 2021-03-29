@@ -2,5 +2,30 @@
   "net": "Internetda o‘z o‘rningizni egallashga shoshiling",
   "discount": "Chegirma va Aksiyalar",
   "cabinet": "Shaxsiy kabinet",
-  "panel": "Boshqaruv paneli"
+  "panel": "Boshqaruv paneli",
+  "domain": "Domen",
+  "domain_menus": {
+    "textdisco": "Chegirma olish",
+    "searchdomain": "Domen qidirish",
+    "changereg": "Registratorni o'zgartirish",
+    "changeowner": "Egasini o'zgartirish"
+  },
+  "hosting": "Xosting and Server",
+  "hosting_menu": {
+    "textdisco": "Chegirma olish",
+    "sharehosting": "Xosting",
+    "vps": "VPS/VDS",
+    "server": "Server joylashtirish"
+  },
+  "ssl": "Ssl sertifikat",
+  "ssl_menu": {
+    "textdisco": "Chegirma olish",
+    "domen": "Domen",
+    "subdomen": "Subdomen",
+    "namecompany": "Kompaniya nomi"
+  },
+  "mail": "Pochta",
+  "sms": "Sms",
+  "partner": "Hamkorlik",
+  "website": "Saytlar"
 }

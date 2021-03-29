@@ -7,56 +7,73 @@
     app
   >
     <v-spacer></v-spacer>
-    <v-menu offset-y transition="slide-x-transition" open-on-hover>
-      <template v-slot:activator="{ on, attrs }">
-        <v-btn
-          class="menuBtn"
-          v-bind="attrs"
-          v-on="on"
-          dense
-        >
-          Dropdown
-          <v-icon right class="iconRight">{{ icons.mdiChevronRight }}</v-icon>
-        </v-btn>
-      </template>
+    <v-btn icon to="/">
+      <v-icon class="icon" large style="">{{ icons.mdiHomeFloorA }}
+      </v-icon>
+    </v-btn>
 
-    </v-menu>
+    <domen_menu/>
+    <hosting_menu/>
+    <ssl_menu/>
+
+    <v-btn class="btn ml-5">
+      {{ $t('mail') }}
+    </v-btn>
+    <website_menu />
+    <v-btn class="btn ml-5">
+      {{ $t('sms') }}
+    </v-btn>
+    <v-btn class="btn ml-5">
+      {{ $t('partner') }}
+    </v-btn>
+
     <v-spacer></v-spacer>
 
   </v-app-bar>
 </template>
 
 <script>
-import {mdiChevronRight} from "@mdi/js";
 import {mdiHomeFloorA} from "@mdi/js";
+import Domen_menu from "@/header-menus/domen_menu";
+import Hosting_menu from "@/header-menus/hosting_menu";
+import Ssl_menu from "@/header-menus/ssl_menu";
+import Website_menu from "@/header-menus/website_menu";
 
 export default {
   name: "Navbar",
+  components: {Website_menu, Ssl_menu, Hosting_menu, Domen_menu},
   data() {
     return {
       clipped: false,
       icons: {
-        mdiChevronRight,
         mdiHomeFloorA
-      },
-      items: [
-        '1',
-        '1',
-        '1'
-      ]
+      }
     }
   }
 }
 </script>
 
 <style scoped>
-.menuBtn {
-  background-color: aliceblue !important;
+.icon {
+  transition: all .5s ease-in-out;
   color: darkslategray !important;
-  box-shadow: none !important;
 }
 
-.menuBtn:hover .iconRight {
-  transform: rotateZ(90deg);
+.icon:hover {
+  background-color: darkslategray;
+  color: aliceblue !important;
+  border-radius: 50%;
+}
+
+.btn {
+  transition: all .5s ease-in-out;
+  background-color: aliceblue !important;
+  color: darkslategray;
+  box-shadow: none;
+}
+
+.btn:hover {
+  background-color: darkslategray !important;
+  color: aliceblue;
 }
 </style>

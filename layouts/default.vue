@@ -75,8 +75,9 @@
     <!--    </v-navigation-drawer>-->
 
 
+    <navbar/>
 
-<navbar />
+
     <v-main>
       <v-container>
         <nuxt/>
@@ -108,7 +109,6 @@ export default {
       fixed: false,
       img: img,
       lang: this.$i18n.locale,
-
       items: [
         'en', 'uz', 'ru'
       ]
@@ -122,7 +122,7 @@ export default {
   watch: {
     lang(lang) {
       this.$router.push(this.switchLocalePath(`${lang}`)
-      )
+    )
     }
   }
 }

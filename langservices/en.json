@@ -2,5 +2,31 @@
   "net": "Book your place on the internet now",
   "discount": "Discounts and Sales",
   "cabinet": "My account",
-  "panel": "Control Panel"
+  "panel": "Control Panel",
+  "domain": "Domain",
+  "domain_menus": {
+    "textdisco": "Get a discount",
+    "searchdomain": "Search a domain",
+    "changereg": "Change Registrar",
+    "changeowner": "Change Ownership"
+  },
+  "hosting": "Hosting and Server",
+  "hosting_menu": {
+    "textdisco": "Get a discount",
+    "sharehosting": "Shared hosting",
+    "vps": "VPS/VDS",
+    "server": "Server deployment"
+  },
+  "ssl": "Ssl certificate",
+  "ssl_menu": {
+    "textdisco": "Get a discount",
+    "domen": "Domain",
+    "subdomen": "Subdomain",
+    "namecompany": "Company name"
+  },
+  "mail": "Mail",
+  "sms": "Sms",
+  "partner": "Cooperation",
+  "website": "Website"
+
 }
