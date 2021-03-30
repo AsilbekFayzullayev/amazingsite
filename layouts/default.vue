@@ -2,7 +2,7 @@
   <v-app class="app">
     <Header/>
     <Navbar/>
-    <v-main>
+    <v-main class="my-5">
       <transition name="route" mode="out-in">
         <nuxt/>
       </transition>
