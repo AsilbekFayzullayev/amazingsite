@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="index">
     <v-row class="mt-10 text-center">
       <v-col md="8" offset-md="2" style="color: darkslategray!important">
         <h1>{{ $t('index_page.start_busines') }}</h1>
@@ -105,7 +105,7 @@
         <v-row>
           <!--          ssl certificate  -->
           <v-col cols="12" md="12">
-            <v-card outlined style="border-radius: 15px;display: flex;align-items: center">
+            <v-card outlined class="cardLink">
               <div
                 style="position: absolute;top: 0;left: 0;width: 100px;height: 100px; background-color: darkslategray;clip-path: polygon(80% 1%, 0 0, 0 80%);display: grid">
               </div>
@@ -122,7 +122,6 @@
                 <img width="200" height="200" src="https://eskiz.uz/assets/images/ssl_img.png" alt="">
               </p>
               <div>
-                <p></p>
                 <v-btn
                   class="mb-5 tarif_btn"
                   :to="`/${$i18n.locale}/ssl_certificate`"
@@ -266,6 +265,7 @@
           </v-col>
         </v-row>
 
+<!--        send message dialog-->
 
         <v-dialog
           v-model="dialog"
@@ -325,7 +325,7 @@
 
         </v-dialog>
 
-<!--        vodeos dialog -->
+        <!--        vodeos dialog -->
         <v-dialog
           v-model="dialogvideos"
           width="500"
@@ -339,9 +339,11 @@
               <span>{{ selectedVideo.name }} : </span>
               <span class="mx-5">{{ selectedVideo.profession }}</span>
               <v-spacer></v-spacer>
-              <v-btn style="background-color: aliceblue;color: darkslategray;border-radius: 20px" @click="dialogvideos = false"
-                icon
-              ><v-icon>mdi-close</v-icon>
+              <v-btn style="background-color: aliceblue;color: darkslategray;border-radius: 20px"
+                     @click="dialogvideos = false"
+                     icon
+              >
+                <v-icon>mdi-close</v-icon>
               </v-btn>
             </v-card-actions>
             <iframe width="100%" height="400" :src="selectedVideo.src"
@@ -443,5 +445,25 @@ export default {
 
 .videos:hover {
   cursor: pointer;
+}
+@media (max-width: 1100px){
+  .index{
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+@media (max-width: 600px) {
+  .cardLink{
+    display: block!important;
+  }
+  .index{
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+.cardLink {
+  border-radius: 15px;
+  display: flex;
+  align-items: center
 }
 </style>
