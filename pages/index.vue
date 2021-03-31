@@ -220,7 +220,7 @@
           <v-col cols="12" md="6">
             <v-card outlined style="background-color: aliceblue;" class="px-10">
               <h2 class="pt-5">News and Events</h2>
-              <div class="my-10 align-center" v-for="n in news" :key="n.text">
+              <div class="my-10 align-center" v-for="(n,index) of news" :key="index">
                 <span style="background-color: darkslategray; padding: 5px;color: aliceblue">{{ n.date }}</span>
                 <span class="ml-4">{{ n.text }}</span>
                 <hr CLASS="my-5"/>
@@ -253,7 +253,7 @@
                   </v-sheet>
 
                   <v-icon style="top: 30%; left: 48%; background-color: darkslategray;padding: 10px;border-radius: 50%"
-                          class="iconvideo">mdi-play
+                          class="iconvideo" @click="clickPlay(item)">mdi-play
                   </v-icon>
                 </v-carousel-item>
               </v-carousel>
@@ -305,6 +305,12 @@
                 outlined
                 dense
               ></v-text-field>
+              <v-file-input
+                label="Choose File"
+                solo
+                outlined
+                dense
+              ></v-file-input>
             </div>
             <v-card-actions>
               <v-spacer></v-spacer>
@@ -315,6 +321,35 @@
               <v-btn style="background-color: aliceblue;color: darkslategray;border-radius: 20px">send</v-btn>
               <v-spacer></v-spacer>
             </v-card-actions>
+          </v-card>
+
+        </v-dialog>
+
+<!--        vodeos dialog -->
+        <v-dialog
+          v-model="dialogvideos"
+          width="500"
+          persistent
+        >
+          <v-card
+            outlined
+            style="background-color: darkslategray;color: aliceblue"
+          >
+            <v-card-actions>
+              <span>{{ selectedVideo.name }} : </span>
+              <span class="mx-5">{{ selectedVideo.profession }}</span>
+              <v-spacer></v-spacer>
+              <v-btn style="background-color: aliceblue;color: darkslategray;border-radius: 20px" @click="dialogvideos = false"
+                icon
+              ><v-icon>mdi-close</v-icon>
+              </v-btn>
+            </v-card-actions>
+            <iframe width="100%" height="400" :src="selectedVideo.src"
+                    class="px-2"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+
           </v-card>
 
         </v-dialog>
@@ -341,17 +376,21 @@ export default {
         {
           img: 'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg',
           name: 'Hamidullayev Fahrullo',
-          profession: 'Chief editor upl.uz'
+          profession: 'Chief editor upl.uz',
+          src: 'https://www.youtube.com/embed/IQw-4JABPCM'
         },
         {
           img: 'https://static.toiimg.com/photo/72975551.cms',
           name: 'Konstantin Vazlin',
-          profession: 'OOO Texnodor (Russia, Moscow)'
+          profession: 'OOO Texnodor (Russia, Moscow)',
+          src: 'https://www.youtube.com/embed/FWQSuskE5UA'
         },
         {
           img: 'https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg',
           name: 'Maxmudov Jaloliddin',
-          profession: "Director of 'Pumpkin Web' LLC"
+          profession: "Director of 'Pumpkin Web' LLC",
+          src: 'https://www.youtube.com/embed/0wHyoBPc6zs'
+
         }
       ],
       news: [
@@ -360,6 +399,8 @@ export default {
         {date: '10 Sep, 2019', text: "We are lunching an updated version"},
       ],
       dialog: false,
+      dialogvideos: false,
+      selectedVideo: {},
       rules: [val => (val || '').length > 0 || `${this.$t('index_page.search_requires')}`]
     }
   },
@@ -367,6 +408,10 @@ export default {
   methods: {
     showDialog() {
       this.dialog = true
+    },
+    clickPlay(video) {
+      this.dialogvideos = true
+      this.selectedVideo = {...video}
     }
   }
 }
