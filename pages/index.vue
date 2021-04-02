@@ -1,6 +1,6 @@
 <template>
   <div class="index">
-    <v-row class="mt-10 text-center">
+    <v-row class="py-10 text-center" style="background-color: aliceblue;color: darkslategray">
       <v-col md="8" offset-md="2" style="color: darkslategray!important">
         <h1>{{ $t('index_page.start_busines') }}</h1>
         <p class="my-5">{{ $t('index_page.register_domains') }}</p>
@@ -11,6 +11,7 @@
         >
           <v-text-field
             class="text_field"
+            v-model="search"
             :placeholder="$t('index_page.search_label')"
             :rules="rules"
             outlined
@@ -18,15 +19,24 @@
             <v-icon slot="prepend-inner" style="color: darkslategray!important;font-family: 'Calibri'">
               www.
             </v-icon>
-            <v-icon slot="append">
+            <v-icon slot="append" style="cursor: pointer" @click="searchResult">
               mdi-magnify
             </v-icon>
           </v-text-field>
         </v-col>
+
+        <p v-for="item of resultSearch" :key="item.id">{{ item.title }}</p>
+
+
         <p>{{ $t('index_page.price_year') }}</p>
 
-        <!--  cards  -->
+      </v-col>
+    </v-row>
 
+    <!--  cards  -->
+
+    <v-row class="text-center">
+      <v-col  md="8" offset-md="2">
         <v-row class="my-10">
           <v-col>
             <v-card outlined class="cards py-3 px-3">
@@ -97,9 +107,9 @@
 
         </v-row>
 
-
       </v-col>
     </v-row>
+
     <v-row style="background-color: aliceblue" class="py-10 text-center">
       <v-col md="8" offset-md="2">
         <v-row>
@@ -136,7 +146,7 @@
 
           <!--          exclusive sites   -->
           <v-col cols="12" md="4">
-            <v-card outlined class="py-10" style="border-radius: 15px">
+            <v-card outlined class="py-10" style="border-radius: 15px;height: 450px">
               <div
                 style="position: absolute;top: 0;left: 0;width: 100px;height: 100px; background-color: darkslategray;clip-path: polygon(80% 1%, 0 0, 0 80%);display: grid">
               </div>
@@ -161,7 +171,7 @@
             <v-row>
               <!--          mail   -->
               <v-col cols="12" md="12">
-                <v-card class="py-10" outlined style="border-radius: 15px">
+                <v-card class="py-10" outlined style="border-radius: 15px;height: 210px">
                   <div
                     style="position: absolute;top: 0;left: 0;width: 100px;height: 100px; background-color: darkslategray;clip-path: polygon(80% 1%, 0 0, 0 80%);display: grid">
                   </div>
@@ -180,7 +190,7 @@
 
               <!--          sms  -->
               <v-col cols="12" md="12">
-                <v-card class="py-10" outlined style="border-radius: 15px">
+                <v-card class="py-10" outlined style="border-radius: 15px;height: 215px">
                   <div
                     style="position: absolute;top: 0;left: 0;width: 100px;height: 100px; background-color: darkslategray;clip-path: polygon(80% 1%, 0 0, 0 80%);display: grid">
                   </div>
@@ -202,6 +212,7 @@
         </v-row>
       </v-col>
     </v-row>
+
     <v-row style="background-color: white;border-top: 2px solid lightgray;border-bottom: 2px solid lightgray">
       <v-col md="8" offset-md="2">
         <v-row class="align-center py-2">
@@ -213,11 +224,15 @@
         </v-row>
       </v-col>
     </v-row>
+
     <v-row class="mt-10">
+
+
       <v-col md="8" offset-md="2" class="px-5">
         <v-row>
+          <!--          news and events     -->
           <v-col cols="12" md="6">
-            <v-card outlined style="background-color: aliceblue;" class="px-10">
+            <v-card outlined style="background-color: aliceblue;" class="px-10" height="500px">
               <h2 class="pt-5">News and Events</h2>
               <div class="my-10 align-center" v-for="(n,index) of news" :key="index">
                 <span style="background-color: darkslategray; padding: 5px;color: aliceblue">{{ n.date }}</span>
@@ -225,14 +240,16 @@
                 <hr CLASS="my-5"/>
               </div>
               <p style="text-align: center">
-                <v-btn class="tarif_btn mb-5" :to="`${$i18n.locale}/news`"
+                <v-btn class="tarif_btn mb-5" :to="`${$i18n.locale}/new`"
                        style="color: aliceblue;background-color: darkslategray;border-radius: 20px">all news
                 </v-btn>
               </p>
             </v-card>
           </v-col>
+
+          <!--          videos     -->
           <v-col cols="12" md="6">
-            <v-card outlined style="background-color: aliceblue" class="px-10 py-5">
+            <v-card outlined style="background-color: aliceblue" class="px-10 py-5" height="500px">
               <div class="d-flex align-center">
                 <h2>Video reviews</h2>
                 <v-spacer></v-spacer>
@@ -250,23 +267,27 @@
                     <span>{{ item.name }} : </span>
                     <span>{{ item.profession }}</span>
                   </v-sheet>
+                  <v-row>
+                    <v-col md="6" offset-md="3" class="text-center my-10 py-10">
+                      <v-icon
+                        style=" background-color: darkslategray;padding: 10px;border-radius: 50%"
+                        @click="clickPlay(item)">mdi-play
+                      </v-icon>
 
-                  <v-icon style="top: 30%; left: 48%; background-color: darkslategray;padding: 10px;border-radius: 50%"
-                          class="iconvideo" @click="clickPlay(item)">mdi-play
-                  </v-icon>
+                    </v-col>
+                  </v-row>
                 </v-carousel-item>
               </v-carousel>
               <p class="text-center">
                 <v-btn style="background-color: darkslategray;color: aliceblue" class="tarif_btn"
-                       :to="`${$i18n.locale}/reviews`">all
+                       :to="`${$i18n.locale}/reviews`">
+                  all
                 </v-btn>
               </p>
             </v-card>
           </v-col>
         </v-row>
-
-<!--        send message dialog-->
-
+        <!--        send reviews dialog   -->
         <v-dialog
           v-model="dialog"
           width="500"
@@ -324,7 +345,6 @@
           </v-card>
 
         </v-dialog>
-
         <!--        vodeos dialog -->
         <v-dialog
           v-model="dialogvideos"
@@ -368,6 +388,9 @@ import Modal from "@/layouts/send_modal";
 export default {
   data() {
     return {
+      search: "",
+      busyFree: "",
+      resultSearch: [],
       pay_cards: [
         'https://eskiz.uz/assets/images/logo/yandex_money_en.png',
         'https://eskiz.uz/assets/images/logo/visa.png',
@@ -400,6 +423,16 @@ export default {
         {date: '30 Sep, 2019', text: "We are lunching an updated version"},
         {date: '10 Sep, 2019', text: "We are lunching an updated version"},
       ],
+      sites: [
+        {id: 1, title: 'kun.uz'},
+        {id: 2, title: 'freelance.uz'},
+        {id: 3, title: 'daryo.uz'},
+        {id: 4, title: 'sites.uz'},
+        {id: 5, title: 'eskiz.uz'},
+        {id: 6, title: 'zuccotech.uz'},
+        {id: 7, title: 'pdp.uz'},
+
+      ],
       dialog: false,
       dialogvideos: false,
       selectedVideo: {},
@@ -407,13 +440,27 @@ export default {
     }
   },
   components: {Modal},
+  computed: {
+
+  },
   methods: {
+    searchResult(){
+      const site = this.sites.filter(element => {
+        return element.title.includes(this.search)
+      })
+      this.resultSearch = site
+    },
     showDialog() {
       this.dialog = true
     },
     clickPlay(video) {
       this.dialogvideos = true
       this.selectedVideo = {...video}
+    },
+  },
+  watch: {
+    search(search) {
+
     }
   }
 }
@@ -446,21 +493,25 @@ export default {
 .videos:hover {
   cursor: pointer;
 }
-@media (max-width: 1100px){
-  .index{
+
+@media (max-width: 1100px) {
+  .index {
     padding-left: 20px;
     padding-right: 20px;
   }
 }
+
 @media (max-width: 600px) {
-  .cardLink{
-    display: block!important;
+  .cardLink {
+    display: block !important;
   }
-  .index{
+
+  .index {
     padding-left: 20px;
     padding-right: 20px;
   }
 }
+
 .cardLink {
   border-radius: 15px;
   display: flex;
