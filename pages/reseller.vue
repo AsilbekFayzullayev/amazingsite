@@ -99,7 +99,84 @@
             </v-card>
           </v-col>
         </v-row>
-        <v-btn class="py-5 mt-10 button">Become a partner</v-btn>
+        <v-btn class="py-5 my-10 button" @click="modal = true">Become a partner</v-btn>
+
+        <v-dialog
+          v-model="modal"
+          width="500"
+          persistent
+        >
+          <v-card
+            outlined
+            class="text-center py-4"
+            style="background-color: darkslategray;color: aliceblue"
+          >
+            <h3>Become a reseller</h3>
+            <span
+              style="background-color: aliceblue;color: darkslategray;position: absolute;right: 10px;top: 10px;
+              border-radius: 50%;
+"
+            ><v-btn icon @click="modal=false"
+            ><v-icon>mdi-close</v-icon></v-btn></span>
+            <form class="mx-5 mt-5">
+              <h4 class="text-left">Phone</h4>
+              <v-text-field
+                type="number"
+                outlined
+                dense
+                solo
+              >
+              </v-text-field>
+              <h4 class="text-left">Email</h4>
+              <v-text-field
+                outlined
+                dense
+                solo
+              >
+              </v-text-field>
+              <v-btn style="border-radius: 20px;color: darkslategray">submit</v-btn>
+            </form>
+          </v-card>
+
+        </v-dialog>
+      </v-col>
+
+    </v-row>
+
+
+    <v-row style="background-color: aliceblue" class="py-4">
+      <v-col md="8" offset-md="2">
+        <v-row>
+          <v-col cols="12" md="6" sm="6">
+            <h2 class="text-left">Reseller Features</h2>
+            <div class="text-left mt-4">
+              <span><v-icon color="green">mdi-checkbox-multiple-marked-circle-outline</v-icon></span>
+              <span>Registration of a domain to the client’s name</span>
+            </div>
+            <div class="text-left mt-4">
+              <span><v-icon color="green">mdi-checkbox-multiple-marked-circle-outline</v-icon></span>
+              <span>Сonvenient billing system with order details</span>
+            </div>
+            <div class="text-left mt-4">
+              <span><v-icon color="green">mdi-checkbox-multiple-marked-circle-outline</v-icon></span>
+              <span>The setting of individual configuration and tariffs for clients on hosting through cPanel/WHM</span>
+            </div>
+            <div class="text-left mt-4">
+              <span><v-icon color="green">mdi-checkbox-multiple-marked-circle-outline</v-icon></span>
+              <span>The setting of individual configuration and tariffs for clients on hosting through cPanel/WHM</span>
+            </div>
+            <div class="text-left mt-4">
+              <span><v-icon color="green">mdi-checkbox-multiple-marked-circle-outline</v-icon></span>
+              <span>The setting of individual configuration and tariffs for clients on hosting through cPanel/WHM</span>
+            </div>
+          </v-col>
+          <v-col cols="12" md="6" sm="6">
+            <h2 class="text-left ml-10">User-friendly interface</h2>
+            <v-img src="https://eskiz.uz/assets/images/mac_en.png" class="mt-4">
+            </v-img>
+          </v-col>
+        </v-row>
+        <ShareWithFriends/>
       </v-col>
     </v-row>
 
@@ -108,17 +185,21 @@
 
 <script>
 import Pages_header from "@/layouts/pagesHeader";
+import ShareWithFriends from "../layouts/shareWithFriends";
 
 export default {
   name: "reseller",
-  components: {Pages_header}
+  data: () => ({
+    modal: false,
+  }),
+  components: {ShareWithFriends, Pages_header}
 }
 </script>
 
 <style scoped>
 .button {
   background-color: darkslategray !important;
-  color: aliceblue!important;
+  color: aliceblue !important;
   border-radius: 30px
 }
 

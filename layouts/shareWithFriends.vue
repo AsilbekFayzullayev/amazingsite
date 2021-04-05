@@ -1,5 +1,5 @@
 <template>
-  <v-row class="mt-5 px-1 align-center">
+  <v-row class="mt-5 px-5 align-center">
     <v-col cols="12" md="6" class="text-left">
       <p class="py-0 my-0">share with friends</p>
       <v-btn icon style="color: deepskyblue">
