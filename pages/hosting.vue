@@ -1,6 +1,6 @@
 <template>
 <div>
-  <h4>hosting</h4>
+  <h4>hostings</h4>
 </div>
 </template>
 
