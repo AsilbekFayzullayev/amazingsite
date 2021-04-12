@@ -149,6 +149,7 @@
         <ShareWithFriends/>
 
       </v-col>
+
     </v-row>
     <v-row style="background-color: aliceblue">
       <v-col md="6" offset-md="3" class="py-10">

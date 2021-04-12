@@ -33,6 +33,8 @@
       </v-col>
     </v-row>
 
+
+
     <!--  cards  -->
 
     <v-row class="text-center">
@@ -380,11 +382,12 @@
       </v-col>
     </v-row>
   </div>
+
+
 </template>
 
 <script>
 import Modal from "@/layouts/send_modal";
-
 export default {
   data() {
     return {

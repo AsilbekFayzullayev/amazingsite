@@ -1,0 +1,17 @@
+[
+  {"id": 1,"isSelected": true, "category": "all", "title": "All"},
+  {"id": 2,"isSelected": false, "category": "food", "title": "Food and Restaurants"},
+  {"id": 3,"isSelected": false, "category": "sport", "title": "Sport"},
+  {"id": 4,"isSelected": false, "category": "auto", "title": "Auto"},
+  {"id": 5,"isSelected": false, "category": "medicine", "title": "Medicine"},
+  {"id": 6,"isSelected": false, "category": "legalserv", "title": "Legal Service"},
+  {"id": 7,"isSelected": false, "category": "business", "title": "Business"},
+  {"id": 8,"isSelected": false, "category": "electronic", "title": "Electronics"},
+  {"id": 9,"isSelected": false, "category": "education", "title": "Education"},
+  {"id": 10,"isSelected": false, "category": "tourism", "title": "Tourism"},
+  {"id": 11,"isSelected": false, "category": "building", "title": "Building"},
+  {"id": 12,"isSelected": false, "category": "agro", "title": "Agro"},
+  {"id": 13,"isSelected": false, "category": "design", "title": "Design and interior"},
+  {"id": 14,"isSelected": false, "category": "service", "title": "Services"},
+  {"id": 15,"isSelected": false, "category": "charity", "title": "Charity"}
+]

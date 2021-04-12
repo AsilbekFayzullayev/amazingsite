@@ -1,5 +1,5 @@
 <template>
-<div><h4>vps</h4></div>
+<div><h4 class="hosting">vps</h4></div>
 </template>
 
 <script>

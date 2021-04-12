@@ -12,26 +12,30 @@
       </v-btn>
     </template>
     <v-list style="padding: 10px">
-      <nuxt-link :to="`/${$i18n.locale}/sale`"  class="nuxt_link">
+      <nuxt-link :to="`/${$i18n.locale}/sale`" class="nuxt_link">
         <v-list-item class="dropdownList">
           <v-icon class="icon" large>{{ icons.mdiSale }}</v-icon>
           <span class="iconText">{{ $t('ssl_menu.textdisco') }}</span>
         </v-list-item>
       </nuxt-link>
-      <nuxt-link :to="`/${$i18n.locale}/ssl_certificate`"  class="nuxt_link">
+      <nuxt-link :to="`/${$i18n.locale}/ssl_certificate`" class="nuxt_link">
         <v-list-item class="dropdownList">
           <v-icon class="icon" large>{{ icons.mdiDomain }}</v-icon>
           <span class="iconText">{{ $t('ssl_menu.domen') }}</span>
         </v-list-item>
       </nuxt-link>
-      <v-list-item class="dropdownList">
-        <v-icon class="icon" large>{{ icons.mdiDomain }}</v-icon>
-        <span class="iconText">{{ $t('ssl_menu.subdomen') }}</span>
-      </v-list-item>
-      <v-list-item class="dropdownList">
-        <v-icon class="icon" large>{{ icons.mdiDomain }}</v-icon>
-        <span class="iconText">{{ $t('ssl_menu.namecompany') }}</span>
-      </v-list-item>
+      <nuxt-link :to="`/${$i18n.locale}/subdomain`" class="nuxt_link">
+        <v-list-item class="dropdownList">
+          <v-icon class="icon" large>{{ icons.mdiDomain }}</v-icon>
+          <span class="iconText">{{ $t('ssl_menu.subdomen') }}</span>
+        </v-list-item>
+      </nuxt-link>
+      <nuxt-link :to="`/${$i18n.locale}/certificate_company_name`" class="nuxt_link">
+        <v-list-item class="dropdownList">
+          <v-icon class="icon" large>{{ icons.mdiDomain }}</v-icon>
+          <span class="iconText">{{ $t('ssl_menu.namecompany') }}</span>
+        </v-list-item>
+      </nuxt-link>
     </v-list>
   </v-menu>
 </template>
@@ -58,6 +62,7 @@ export default {
   color: darkslategray !important;
   box-shadow: none !important;
 }
+
 .menuBtn:hover {
   background-color: darkslategray !important;
   color: aliceblue !important;
@@ -92,7 +97,8 @@ export default {
 .dropdownList:hover .icon {
   color: aliceblue;
 }
-.nuxt_link{
+
+.nuxt_link {
   text-decoration: none;
 }
 </style>

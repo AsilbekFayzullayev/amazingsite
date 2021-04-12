@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "mail_plan": 5,
+    "storage": 5,
+    "mailbox": 50,
+    "domains_count": 1,
+    "plan": 1,
+    "forOneMonthValue": 50000
+  },
+  {
+    "id": 2,
+    "mail_plan": 5,
+    "storage": 5,
+    "mailbox": 50,
+    "domains_count": 1,
+    "plan": 1,
+    "forOneMonthValue": 50000
+  },
+  {
+    "id": 3,
+    "mail_plan": 5,
+    "storage": 5,
+    "mailbox": 50,
+    "domains_count": 1,
+    "plan": 1,
+    "forOneMonthValue": 50000
+  },
+  {
+    "id": 4,
+    "mail_plan": 5,
+    "storage": 5,
+    "mailbox": 50,
+    "domains_count": 1,
+    "plan": 1,
+    "forOneMonthValue": 50000
+  }
+]

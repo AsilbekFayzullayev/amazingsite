@@ -2,7 +2,7 @@
   <v-app class="app">
     <Header/>
     <Navbar/>
-    <v-main class="my-5">
+    <v-main class="my-5 main">
       <transition name="route" mode="out-in">
         <nuxt/>
       </transition>
@@ -27,6 +27,12 @@ export default {
 </script>
 
 <style scoped>
+@media (max-width: 1000px) {
+  .main{
+    padding: 0 30px!important;
+  }
+}
+
 .app {
   font-family: "sans-serif";
 }

@@ -1,0 +1,90 @@
+[
+  {
+    "id": 1,
+    "category": "CPanel",
+    "host_plan": "500",
+    "storage": 500,
+    "site": 1,
+    "database": 1,
+    "mailbox": 1,
+    "ram": "512GB",
+    "forOneMonthValue": 50000
+  },
+  {
+    "id": 2,
+    "category": "Plesk",
+    "host_plan": "500GB",
+    "storage": 1000,
+    "site": 1,
+    "database": 1,
+    "mailbox": 1,
+    "ram": "512GB",
+    "forOneMonthValue": 50000
+  },
+  {
+    "id": 3,
+    "category": "CPanel",
+    "host_plan": "500",
+    "storage": 100,
+    "site": 1,
+    "database": 1,
+    "mailbox": 1,
+    "ram": "512GB",
+    "forOneMonthValue": 50000
+  },
+  {
+    "id": 4,
+    "category": "Plesk",
+    "host_plan": "500GB",
+    "storage": 300,
+    "site": 1,
+    "database": 1,
+    "mailbox": 1,
+    "ram": "512GB",
+    "forOneMonthValue": 50000
+  },
+  {
+    "id": 5,
+    "category": "Plesk",
+    "host_plan": "500GB",
+    "storage": 600,
+    "site": 1,
+    "database": 1,
+    "mailbox": 1,
+    "ram": "512GB",
+    "forOneMonthValue": 50000
+  },
+  {
+    "id": 6,
+    "category": "Plesk",
+    "host_plan": "500GB",
+    "storage": 800,
+    "site": 1,
+    "database": 1,
+    "mailbox": 1,
+    "ram": "512GB",
+    "forOneMonthValue": 50000
+  },
+  {
+    "id": 7,
+    "category": "cPanel",
+    "host_plan": "500",
+    "storage": 100,
+    "site": 1,
+    "database": 1,
+    "mailbox": 1,
+    "ram": "512GB",
+    "forOneMonthValue": 50000
+  },
+  {
+    "id": 8,
+    "category": "cPanel",
+    "host_plan": "500",
+    "storage": 1000,
+    "site": 1,
+    "database": 1,
+    "mailbox": 1,
+    "ram": "512GB",
+    "forOneMonthValue": 50000
+  }
+]

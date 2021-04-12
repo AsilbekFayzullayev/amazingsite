@@ -34,15 +34,12 @@
             </v-row>
           </v-col>
         </v-row>
-        <SgareWithFriends/>
+        <ShareWithFriends />
       </v-tab-item>
       <v-tab-item class="pt-10">
         <Reseller/>
       </v-tab-item>
-
     </v-tabs>
-
-
   </div>
 </template>
 
