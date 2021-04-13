@@ -44,6 +44,7 @@ export default {
       {
         locales: ['en', 'uz','ru'],
         vueI18n: {
+          defaultLocale: 'uz',
           messages: {
             en,
             uz,

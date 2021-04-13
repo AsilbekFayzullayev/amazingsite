@@ -81,6 +81,7 @@
             </v-card>
           </v-col>
         </v-row>
+
         <p>It is provided only when paid for a year and is valid for one year *</p>
 
         <h4 class="my-5">ALL RATES CONTAIN FOLLOWINGS</h4>
